@@ -129,5 +129,20 @@ namespace PaymentGateways.Controllers
             this.payment = new Payment() { id = paymentId };
             return this.payment.Execute(apiContext, paymentExecution);
         }
+
+        public ActionResult PaypalSuccess()
+        {
+            return View();
+        }
+
+        public ActionResult PaypalFail()
+        {
+            return View();
+        }
+
+        public ActionResult PaypalException()
+        {
+            return View();
+        }
     }
 }

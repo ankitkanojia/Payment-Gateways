@@ -1,0 +1,81 @@
+﻿@model PayuRequest
+
+@{
+    ViewBag.Title = "PayUMoney";
+}
+
+@using (Html.BeginForm("PayUMoney", "PaymentGateway", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <br />
+    <div class="row">
+        <div class="col-md-4">
+            <label>First Name</label>
+            @Html.TextBoxFor(s => s.firstName, new { @class = "form-control" })
+        </div>
+        <div class="col-md-4">
+            <label>Last Name</label>
+            @Html.TextBoxFor(s => s.lastname, new { @class = "form-control" })
+        </div>
+        <div class="col-md-4">
+            <label>Email Address</label>
+            @Html.TextBoxFor(s => s.email, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <br />
+    <div class="row">
+        <div class="col-md-4">
+            <label>Amount</label>
+            @Html.TextBoxFor(s => s.amount, new { @class = "form-control" })
+        </div>
+        <div class="col-md-4">
+            <label>Product Information</label>
+            @Html.TextBoxFor(s => s.productInfo, new { @class = "form-control" })
+        </div>
+        <div class="col-md-4">
+            <label>Mobile Number</label>
+            @Html.TextBoxFor(s => s.phone, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <br />
+    <div class="row">
+        <div class="col-md-4">
+            <label>Address</label>
+            @Html.TextBoxFor(s => s.address1, new { @class = "form-control" })
+        </div>
+        <div class="col-md-4">
+            <label>Land mark</label>
+            @Html.TextBoxFor(s => s.address2, new { @class = "form-control" })
+        </div>
+        <div class="col-md-4">
+            <label>City</label>
+            @Html.TextBoxFor(s => s.city, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <br />
+    <div class="row">
+        <div class="col-md-4">
+            <label>State</label>
+            @Html.TextBoxFor(s => s.state, new { @class = "form-control" })
+        </div>
+        <div class="col-md-4">
+            <label>Zipcode</label>
+            @Html.TextBoxFor(s => s.zipcode, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <br />
+    <div class="row">
+        <div class="col-md-4">
+            <button type="submit" class="btn btn-primary">
+                <i class="fa fa-credit-card-alt" aria-hidden="true"></i>
+                Hureeee! Go for PAYMENT
+            </button>
+        </div>
+    </div>
+
+}

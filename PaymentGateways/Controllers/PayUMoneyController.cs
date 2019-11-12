@@ -76,5 +76,15 @@ namespace PaymentGateways.Controllers
                 throw;
             }
         }
+
+        public ActionResult PayUSuccess(PayuResponse data)
+        {
+            return View();
+        }
+
+        public ActionResult PayUFail(PayuResponse data)
+        {
+            return View();
+        }
     }
 }

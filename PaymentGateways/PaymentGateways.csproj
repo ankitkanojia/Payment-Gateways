@@ -181,10 +181,12 @@
     <Content Include="Views\PayPal\Index.cshtml" />
     <Content Include="Views\PayPal\PaypalFail.cshtml" />
     <Content Include="Views\PayPal\PaypalSuccess.cshtml" />
+    <Content Include="Views\PayUMoney\PayUMoney.cshtml" />
+    <Content Include="Views\PayUMoney\PayUSuccess.cshtml" />
+    <Content Include="Views\PayUMoney\PayUFail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\PayUMoney\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

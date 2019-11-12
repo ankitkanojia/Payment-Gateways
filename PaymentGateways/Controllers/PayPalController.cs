@@ -14,7 +14,7 @@ namespace PaymentGateways.Controllers
         {
             /*Need below Library
             Install-package paypal
-            Install-package log4net
+            Install-package log4net 
             */
             //getting the apiContext as earlier
             APIContext apiContext = Models.Configuration.GetAPIContext();

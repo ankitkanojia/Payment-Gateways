@@ -67,6 +67,8 @@ namespace PaymentGateways.Controllers
                 myremotepost.Add("surl", surl);
                 myremotepost.Add("furl", furl);
                 string hashString = key + "|" + txnid + "|" + data.amount + "|" + data.productInfo + "|" + data.firstName + "|" + data.email + "|||||||||||" + salt;
+                string hash = Hashing.Generatehash512(hashString);
+                myremotepost.Add("hash", hash);
                 myremotepost.Post();
             }
             catch

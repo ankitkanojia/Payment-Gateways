@@ -138,6 +138,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Hashing.cs" />
+    <Compile Include="Helpers\RemotePost.cs" />
     <Compile Include="Models\PaymentGatewayVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

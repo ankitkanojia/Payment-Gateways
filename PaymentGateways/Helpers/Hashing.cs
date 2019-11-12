@@ -82,7 +82,8 @@ namespace PaymentGateways.Helpers
             }
         }
 
-        #region --> Generate HASH (For PayUMoney Payment Gateway) | Suchit Khunt
+        #region --> Generate HASH (For PayUMoney Payment Gateway)
+
         public static string Generatehash512(string text)
         {
 
@@ -102,7 +103,7 @@ namespace PaymentGateways.Helpers
         }
         #endregion
 
-        #region --> Generate SALT Key | Add | Suchit Khunt | 29092016      
+        #region --> Generate SALT Key
 
         public static byte[] Get_SALT(int maximumSaltLength)
         {
@@ -119,7 +120,8 @@ namespace PaymentGateways.Helpers
 
         #endregion
 
-        #region --> Generate HASH Using SHA512 | Add | Suchit Khunt | 29092016
+        #region --> Generate HASH Using SHA512
+
         public static string Get_HASH_SHA512(string password, string username, byte[] salt)
         {
             try
@@ -164,7 +166,8 @@ namespace PaymentGateways.Helpers
         }
         #endregion
 
-        #region --> Comapare HASH Value | Add | Suchit Khunt | 29092016
+        #region --> Comapare HASH Value
+
         public static bool CompareHashValue(string password, string username, string OldHASHValue, byte[] SALT)
         {
             try

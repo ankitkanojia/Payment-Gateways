@@ -181,7 +181,7 @@
     <Content Include="Views\PayPal\Index.cshtml" />
     <Content Include="Views\PayPal\PaypalFail.cshtml" />
     <Content Include="Views\PayPal\PaypalSuccess.cshtml" />
-    <Content Include="Views\PayUMoney\PayUMoney.cshtml" />
+    <Content Include="Views\PayUMoney\Index.cshtml" />
     <Content Include="Views\PayUMoney\PayUSuccess.cshtml" />
     <Content Include="Views\PayUMoney\PayUFail.cshtml" />
   </ItemGroup>

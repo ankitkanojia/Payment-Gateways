@@ -4,7 +4,7 @@
     ViewBag.Title = "PayUMoney";
 }
 
-@using (Html.BeginForm("PayUMoney", "PaymentGateway", FormMethod.Post))
+@using (Html.BeginForm("Index", "PayUMoney", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 

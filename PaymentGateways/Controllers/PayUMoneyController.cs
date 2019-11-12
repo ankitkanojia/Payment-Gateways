@@ -12,7 +12,7 @@ namespace PaymentGateways.Controllers
     public class PayUMoneyController : Controller
     {
         [HttpGet]
-        public ActionResult PayUMoney()
+        public ActionResult Index()
         {
             try
             {
@@ -38,7 +38,7 @@ namespace PaymentGateways.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public void PayUMoney(PayuRequest data)
+        public void Index(PayuRequest data)
         {
             try
             {

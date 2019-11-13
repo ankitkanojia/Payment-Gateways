@@ -55,6 +55,9 @@
     <Reference Include="PayPal, Version=1.9.1.0, Culture=neutral, PublicKeyToken=5b4afc1ccaef40fb, processorArchitecture=MSIL">
       <HintPath>packages\PayPal.1.9.1\lib\net451\PayPal.dll</HintPath>
     </Reference>
+    <Reference Include="RestSharp, Version=106.6.10.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>packages\RestSharp.106.6.10\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -133,6 +136,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IDTController.cs" />
     <Compile Include="Controllers\PayPalController.cs" />
     <Compile Include="Controllers\PayUMoneyController.cs" />
     <Compile Include="Global.asax.cs">
@@ -184,6 +188,7 @@
     <Content Include="Views\PayUMoney\Index.cshtml" />
     <Content Include="Views\PayUMoney\PayUSuccess.cshtml" />
     <Content Include="Views\PayUMoney\PayUFail.cshtml" />
+    <Content Include="Views\IDT\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

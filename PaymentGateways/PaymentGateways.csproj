@@ -151,6 +151,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CyberSourceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IDTController.cs" />
     <Compile Include="Controllers\PayPalController.cs" />
@@ -208,6 +209,7 @@
     <Content Include="Views\IDT\Index.cshtml" />
     <Content Include="Views\Twillio\TwillioSMS.cshtml" />
     <Content Include="Views\Twillio\TwillioVoiceCall.cshtml" />
+    <Content Include="Views\CyberSource\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

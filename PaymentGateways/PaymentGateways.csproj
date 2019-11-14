@@ -210,6 +210,7 @@
     <Content Include="Views\Twillio\TwillioSMS.cshtml" />
     <Content Include="Views\Twillio\TwillioVoiceCall.cshtml" />
     <Content Include="Views\CyberSource\Index.cshtml" />
+    <Content Include="Views\CyberSource\DoCyberSorcePayment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

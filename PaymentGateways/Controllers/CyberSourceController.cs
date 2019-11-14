@@ -18,5 +18,16 @@ namespace PaymentGateways.Controllers
 
             return RedirectToAction("DoCyberSorcePayment", "PaymentGateway", data);
         }
+
+        [HttpGet]
+        public ActionResult DoCyberSorcePayment(CyberSourceVM data)
+        {
+            return View();
+        }
+
+            public ActionResult CyberSourceReturnURL(CyberSourceResVM data)
+        {
+            return View();
+        }
     }
 }

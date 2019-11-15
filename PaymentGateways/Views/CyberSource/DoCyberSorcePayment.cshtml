@@ -1,7 +1,190 @@
-﻿
+﻿@model CyberSourceReqVM
+
 @{
-    ViewBag.Title = "DoCyberSorcePayment";
+    Layout = null;
 }
 
-<h2>DoCyberSorcePayment</h2>
+<!DOCTYPE html>
 
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Payment</title>
+    <link rel="shortcut icon" type="image/png" href=@Url.Content("~/Images/favicon.png")>
+
+    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery.countdownTimer.js"></script>
+
+</head>
+<body>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12 text-center" style="font-size:18px;">
+                <img src="~/Images/l2.gif" class="img-rounded" />
+            </div>
+
+            <div class="col-md-12 text-center" style="font-size:18px;">
+                <label class="text-success" style="font-size:28px;">Payment is in process. Please Wait... </label>
+                <br />
+                Please don`t refresh the page or don`t close the browser while processing.
+            </div>
+        </div>
+    </div>
+
+
+    <form id="payment_form" action="https://testsecureacceptance.cybersource.com/silent/pay" method="post">
+
+        @Html.HiddenFor(s => s.access_key)
+        @Html.HiddenFor(s => s.profile_id)
+        @Html.HiddenFor(s => s.transaction_uuid)
+        @Html.HiddenFor(s => s.signed_field_names)
+        @Html.HiddenFor(s => s.unsigned_field_names)
+        @Html.HiddenFor(s => s.signed_date_time)
+        @Html.HiddenFor(s => s.locale)
+        @Html.HiddenFor(s => s.transaction_type)
+        @Html.HiddenFor(s => s.reference_number)
+        @Html.HiddenFor(s => s.amount)
+        @Html.HiddenFor(s => s.currency)
+        @Html.HiddenFor(s => s.payment_method)
+        @Html.HiddenFor(s => s.bill_to_forename)
+        @Html.HiddenFor(s => s.bill_to_surname)
+        @Html.HiddenFor(s => s.bill_to_email)
+        @Html.HiddenFor(s => s.bill_to_phone)
+        @Html.HiddenFor(s => s.bill_to_address_line1)
+        @Html.HiddenFor(s => s.bill_to_address_city)
+        @Html.HiddenFor(s => s.bill_to_address_postal_code)
+        @Html.HiddenFor(s => s.bill_to_address_state)
+        @Html.HiddenFor(s => s.bill_to_address_country)
+        @Html.HiddenFor(s => s.card_type)
+        @Html.HiddenFor(s => s.card_number)
+        @Html.HiddenFor(s => s.card_expiry_date)
+        @Html.HiddenFor(s => s.signature)
+        @Html.HiddenFor(s => s.submit)
+
+        <button type="submit" class="hidden" id="btnSubmit"> SUBMIT </button>
+
+    </form>
+
+    @*SCRIPTS HERE*@
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            setTimeout(function () { AjaxCall(); }, 2000);
+        });
+
+        function AjaxCall() {
+            $("#btnSubmit").trigger("click");
+        }
+    </script>
+
+
+    <!--START: Disable Backbutton | Add | Suchit Khunt | 13092016-->
+    <script type="text/javascript">
+
+        function changeHashOnLoad() {
+            window.location.href += "#";
+            setTimeout("changeHashAgain()", "50");
+        }
+
+
+        function logout() {
+            window.location = '@Url.Action("Logout", "SuperAdmin")';
+        }
+
+        function browserCopy() {
+            if (self != top) { top.location.replace(self.location.href); }
+        }
+
+        function changeHashOnLoad() {
+            window.location.href += "#";
+            setTimeout("changeHashAgain()", "5");
+        }
+
+        function changeHashAgain() {
+            window.location.href += "#";
+        }
+
+        function IntervalSet() {
+            changeHashOnLoad();
+            function temp() {
+                if (window.location.hash != storedHash) {
+                    window.location.hash = storedHash;
+                }
+            }
+            var storedHash = window.location.hash;
+            window.setInterval(temp, 50);
+        }
+
+        var clicked = false;
+        var xmlHttp
+        var browser = navigator.appName;
+
+        function CheckBrowser() {
+            if (clicked == false) {
+                xmlHttp = GetXmlHttpObject();
+                xmlHttp.open("GET", "SessionExpiredMessage.aspx", true);
+                xmlHttp.onreadystatechange = function () {
+                    if (xmlHttp.readyState == 4) {
+                        // alert(xmlhttp.responseText)
+                    }
+                }
+                xmlHttp.send(null)
+                if (browser == "Netscape") {
+                    window.history.forward(1);
+                }
+                else {
+
+                    // alert("Redirected");
+                    clicked = false;
+                }
+
+            }
+        }
+        function GetXmlHttpObject() {
+            var xmlHttp = null;
+            try {
+                // Firefox, Opera 8.0+, Safari
+                xmlHttp = new XMLHttpRequest();
+            }
+            catch (e) {
+                //Internet Explorer
+                try {
+                    xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+                }
+                catch (e) {
+                    xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+            }
+            return xmlHttp;
+        }
+
+        window.onunload = function () { CheckBrowser(); }
+
+
+    </script>
+    <script type="text/javascript">
+        function addLoadEvent(func) {
+            var oldonload = window.onload;
+            if (typeof window.onload != 'function') {
+                window.onload = func;
+            } else {
+                window.onload = function () {
+                    if (oldonload) {
+                        oldonload();
+                    }
+                    func();
+                }
+            }
+        }
+        addLoadEvent(browserCopy);
+        addLoadEvent(IntervalSet);
+
+
+
+    </script>
+    <!--END: Disable Backbutton | Add | Suchit Khunt | 13092016-->
+</body>
+</html>
